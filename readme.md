@@ -6,7 +6,7 @@ Here i opensource FridaRootManager cb-5
 <p>RootHide       <3 - Remount/Bootstrap help</p>
 <p>Joe Wiliams    <3 - FridaSignStrap</p>
 <p>Opa334         <3 - Trollstore's ldid</p>
-<p>Lemin Leminez  <3 - Button in main Menu</p>
 <p>HAHALOSAH      <3 - POSIX_spawn help</p>
 <p>CoreSerena     <3 - NSTask Executor</p>
 <p>Procursus      <3 - Binpack for Bootstrap</p>
+<p>Lemin Leminez  <3 - Button in main Menu</p>
