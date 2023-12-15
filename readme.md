@@ -1,12 +1,12 @@
-FridaRootManager V1 OpenSource
+<h1>FridaRootManager V1 OpenSource</h1>
 
 Here i opensource FridaRootManager cb-5
 
-Thanks to:
-RootHide       <3 - Remount/Bootstrap help
-Joe Wiliams    <3 - FridaSignStrap
-Opa334         <3 - Trollstore's ldid
-Lemin Leminez  <3 - Button in main Menu
-HAHALOSAH      <3 - POSIX_spawn help
-CoreSerena     <3 - NSTask Executor
-Procursus      <3 - Binpack for Bootstrap
+<h2>Thanks to:</h2>
+<p>RootHide       <3 - Remount/Bootstrap help</p>
+<p>Joe Wiliams    <3 - FridaSignStrap</p>
+<p>Opa334         <3 - Trollstore's ldid</p>
+<p>Lemin Leminez  <3 - Button in main Menu</p>
+<p>HAHALOSAH      <3 - POSIX_spawn help</p>
+<p>CoreSerena     <3 - NSTask Executor</p>
+<p>Procursus      <3 - Binpack for Bootstrap</p>
