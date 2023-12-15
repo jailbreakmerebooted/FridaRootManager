@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set -e
+
+INSTALL_NAME="$1"
+
+if [ -z "$INSTALL_NAME" ]; then
+    echo "Error: No font install name specified."
+    exit 1
+fi
+
+FONT_PATH="/Library/Themes/EmojiFontManager/$INSTALL_NAME.font"
+
+if [ -d "$FONT_PATH" ]; then
+    rm -rf "$FONT_PATH"
+else
+    FONT_PATH="/var/jb/Library/Themes/EmojiFontManager/$INSTALL_NAME.font"
+    if [ -d "$FONT_PATH" ]; then
+        rm -rf "$FONT_PATH"
+    fi
+fi

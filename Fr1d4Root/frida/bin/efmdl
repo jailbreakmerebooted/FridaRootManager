@@ -1,0 +1,56 @@
+#!/bin/bash
+
+set -e
+
+NAME="$1"
+INSTALL_NAME="$2"
+VERSION="$3"
+
+if [ -z "$NAME" ]; then
+    echo "Error: No font name specified."
+    exit 1
+fi
+
+if [ -z "$INSTALL_NAME" ]; then
+    echo "Error: No font install name specified."
+    exit 1
+fi
+
+if [ -z "$VERSION" ]; then
+    echo "Error: No font version specified."
+    exit 1
+fi
+
+URL="https://github.com/PoomSmart/EmojiFonts/releases/download/$VERSION/$NAME.ttc"
+
+OUTPUT_FILENAME="AppleColorEmoji@2x.ttc"
+FONT_PATH=/Library/Themes/EmojiFontManager
+
+if [ ! -w $FONT_PATH ]; then
+    FONT_PATH=/var/jb/Library/Themes/EmojiFontManager
+    if [ ! -w $FONT_PATH ]; then
+        echo "Error: Could not find a writable directory to download the font to."
+        exit 1
+    fi
+fi
+
+mkdir -p $FONT_PATH/$INSTALL_NAME.font
+
+download_file() {
+    DOWNLOAD_RESULT=0
+    wget -nv -O "${FONT_PATH}/$INSTALL_NAME.font/${OUTPUT_FILENAME}" "$URL" || DOWNLOAD_RESULT=$?
+    if [ "$DOWNLOAD_RESULT" -ne 0 ]; then
+        DOWNLOAD_RESULT=0
+        echo "Using curl instead of wget..."
+        curl -L -o "${FONT_PATH}/$INSTALL_NAME.font/${OUTPUT_FILENAME}" "$URL" || DOWNLOAD_RESULT=$?
+    fi
+}
+
+echo "Downloading $URL to ${FONT_PATH}/$INSTALL_NAME.font/${OUTPUT_FILENAME}..."
+download_file
+if [ "$DOWNLOAD_RESULT" -eq 0 ]; then
+    echo "File successfully downloaded."
+else
+    echo "Error: Download failed. Please check if the URL is correct, there is enough disk space, or try again later."
+    exit 1
+fi
